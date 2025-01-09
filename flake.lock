@@ -80,11 +80,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1735985009,
-        "narHash": "sha256-0MKPWCc7mxtz6Dne6bPVCSuARnJ1/maR9g8Bo54lXnI=",
+        "lastModified": 1736395853,
+        "narHash": "sha256-8UUPamJ+7nPqlTbbECdTlBGbV0Dpmx1AneaSg8N4bN0=",
         "owner": "tnichols217",
         "repo": "htms",
-        "rev": "8e4071fce26f5933bf75d9918192d27e1384ca78",
+        "rev": "26bda9d53eb3c0e2ab792638179db799c9ee0ccf",
         "type": "github"
       },
       "original": {
