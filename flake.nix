@@ -4,7 +4,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     gitignore.url = "github:hercules-ci/gitignore.nix";
-    htms.url = "github:tnichols217/htms";
+    htms.url = "github:meirisoda/htms";
   };
   outputs = {...} @ inputs:
     inputs.flake-utils.lib.eachDefaultSystem (
