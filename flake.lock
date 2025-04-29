@@ -82,13 +82,13 @@
       "locked": {
         "lastModified": 1736395853,
         "narHash": "sha256-8UUPamJ+7nPqlTbbECdTlBGbV0Dpmx1AneaSg8N4bN0=",
-        "owner": "tnichols217",
+        "owner": "meirisoda",
         "repo": "htms",
         "rev": "26bda9d53eb3c0e2ab792638179db799c9ee0ccf",
         "type": "github"
       },
       "original": {
-        "owner": "tnichols217",
+        "owner": "meirisoda",
         "repo": "htms",
         "type": "github"
       }
