@@ -26,7 +26,8 @@ html,
 body,
 pre,
 main {
-  font-family: Inconsolata;
+  font-family: monospace;
+  
   font-size: 16px;
   color: var(--foreground);
   background-color: var(--background);
