@@ -32,6 +32,7 @@
           footnote = false;
           deflist = false;
           abbr = false;
+          attrs = true;
           emoji = false;
           container = false;
           ins = false;
@@ -48,16 +49,26 @@
       };
       files = {
         extensions = {
-          html = ".html";
-          md = ".md";
-          ignore = [".htms"];
+            mapping = {
+              ".html" = "html";
+              ".md" = "md";
+              ".css" = "css";
+              ".scss" = "sass";
+              ".less" = "less";
+              ".js" = "js";
+              ".ts" = "ts";
+              ".htms" = "ignore";
+              default = "copy";
+            };
+            html = ".html";
+            css = ".css";
         };
         md_renderer = "render.htms";
       };
       imports = {
-        tag = "IMPORT";
-        source = "src";
-        alias = "as";
+          tag = "IMPORT";
+          source = "src";
+          alias = "as";
       };
     };
   }

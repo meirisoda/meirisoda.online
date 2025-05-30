@@ -4,7 +4,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     gitignore.url = "github:hercules-ci/gitignore.nix";
-    htms.url = "github:tnichols217/htms";
+    htms.url = "github:meirisoda/htms";
   };
   outputs = {...} @ inputs:
     inputs.flake-utils.lib.eachDefaultSystem (
@@ -45,10 +45,23 @@
           build = {
             type = "app";
             program = ''${pkgs.writeShellScriptBin "build" ''
-                ${inputs.htms.packages.${system}.htms}/bin/htms -i ./src -o ./out -c ./config.nix
+                ${inputs.htms.packages.${system}.htms}/bin/htms build -i ./src -o ./out -c ./config.nix
               ''}/bin/build'';
           };
-          default = build;
+          watch = {
+            type = "app";
+            program = ''${pkgs.writeShellScriptBin "watch" ''
+                ${inputs.htms.packages.${system}.htms}/bin/htms build -i ./src -o ./out -c ./config.nix
+                cd out
+
+                (trap 'kill 0' SIGINT;
+                  ${pkgs.python3}/bin/python -m "http.server" &
+                  ${inputs.htms.packages.${system}.htms}/bin/htms watch -i ../src -o ../out -c ../config.nix &
+                  wait
+                )
+              ''}/bin/watch'';
+          };
+          default = watch;
         };
         packages = rec {
           # build = pkgs.callPackage ./nix/build.nix { inherit (inputs.htms.packages.${system}) htms; };

@@ -1,0 +1,19 @@
+<Import src="../../../../templates/header.html" as="Heade"></Import>
+<Import src="../../../../templates/footer.html" as="Foot"></Import>
+<Import src="../../../../templates/top.html" as="Top"></Import>
+<Import src="../../../../templates/imports.html" as="Imports"></Import>
+<head>
+    <Imports></Imports>
+</head>
+
+<body>
+    <Heade data-page="notes archive"></Heade>
+
+    <main>
+        <a href="/pages/notes/archive.html">←</a>
+        {{{}}}
+    </main>
+
+    <Foot></Foot>
+    <Top></Top>
+</body>
