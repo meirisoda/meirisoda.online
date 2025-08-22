@@ -1,0 +1,31 @@
+name: Build a test page
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+  pull-requests: write
+  issues: write
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: build-htms
+        uses: tnichols217/htms@a2
+      - name: Upload artifact
+        id: upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          # Upload output
+          path: "./out"
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            Artifact may be downloaded [here](${{ steps.upload-artifact.outputs.artifact-url }})
+          reactions: '+1'
