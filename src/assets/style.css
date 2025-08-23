@@ -26,7 +26,7 @@ html,
 body,
 pre,
 main {
-  font-family: monospace;
+  font-family: Arial, sans-serif;
   
   font-size: 16px;
   color: var(--foreground);
