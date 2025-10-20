@@ -26,8 +26,8 @@ html,
 body,
 pre,
 main {
-  font-family: Arial, sans-serif;
-  
+  font-family: monospace;
+  letter-spacing: -1px;
   font-size: 16px;
   color: var(--foreground);
   background-color: var(--background);
